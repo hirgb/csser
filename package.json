@@ -7,7 +7,7 @@
         "test": "echo \"Error: no test specified\" && exit 1"
     },
     "keywords": [
-        "css", "csser", "layout", "flex", "offset"
+        "css", "csser", "layout", "flex", "offset", "responsive"
     ],
     "author": "hirgb.com <hirgb.com@gmail.com> (https://hirgb.com)",
     "repository": {
