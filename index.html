@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./layout.css">
+    <style>
+        .row {
+            margin: 10px 0;
+        }
+
+        .row>div {
+            color: white;
+            text-align: center;
+        }
+
+        .color1 {
+            background-color: #4FC3F7;
+        }
+
+        .color2 {
+            background-color: #B3E5FC;
+        }
+
+        .color3 {
+            background-color: #E1F5FE;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="row">
+        <h2>Row and Column</h2>
+    </div>
+    <div class="row">
+        <div class="col-24 color1">col-24</div>
+    </div>
+    <div class="row">
+        <div class="col-12 color1">col-12</div>
+        <div class="col-12 color2">col-12</div>
+    </div>
+    <div class="row">
+        <div class="col-8 color2">col-8</div>
+        <div class="col-8 color1">col-8</div>
+        <div class="col-8 color2">col-8</div>
+    </div>
+    <div class="row">
+        <div class="col-6 color1">col-6</div>
+        <div class="col-6 color2">col-6</div>
+        <div class="col-6 color1">col-6</div>
+        <div class="col-6 color2">col-6</div>
+    </div>
+    <div class="row">
+        <h2>Offset</h2>
+    </div>
+    <div class="row">
+        <div class="col-12 offset-12 color1">col-12</div>
+    </div>
+    <div class="row">
+        <div class="col-8 offset-8 color1">col-8</div>
+    </div>
+    <div class="row">
+        <div class="col-6 offset-6 color1">col-6</div>
+        <div class="col-6 offset-6 color1">col-6</div>
+    </div>
+
+</body>
+
+</html>
