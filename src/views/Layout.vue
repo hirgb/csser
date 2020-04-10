@@ -1,0 +1,120 @@
+<template>
+    <div class="container">
+        <div class="row">
+            <h2>Row and Column</h2>
+        </div>
+        <div class="row">
+            <div class="col-24 color1">.col-24</div>
+        </div>
+        <div class="row">
+            <div class="col-12 color1">.col-12</div>
+            <div class="col-12 color2">.col-12</div>
+        </div>
+        <div class="row">
+            <div class="col-8 color2">.col-8</div>
+            <div class="col-8 color1">.col-8</div>
+            <div class="col-8 color2">.col-8</div>
+        </div>
+        <div class="row">
+            <div class="col-6 color1">.col-6</div>
+            <div class="col-6 color2">.col-6</div>
+            <div class="col-6 color1">.col-6</div>
+            <div class="col-6 color2">.col-6</div>
+        </div>
+        <div class="row">
+            <h2>Offset</h2>
+        </div>
+        <div class="row">
+            <div class="col-12 offset-12 color1">.col-12 .offset-12</div>
+        </div>
+        <div class="row">
+            <div class="col-8 offset-8 color1">.col-8 .offset-8</div>
+        </div>
+        <div class="row">
+            <div class="col-6 offset-6 color1">.col-6 .offset-6</div>
+            <div class="col-6 offset-6 color1">.col-6 .offset-6</div>
+        </div>
+
+        <div class="row">
+            <h2>Flex</h2>
+        </div>
+        <div class="row flex-start">
+            <div class="col-8 color2">.col-8 .flex-start</div>
+            <div class="col-8 color1">.col-8 .flex-start</div>
+        </div>
+        <div class="row flex-center">
+            <div class="col-8 color2">.col-8 .flex-center</div>
+            <div class="col-8 color1">.col-8 .flex-center</div>
+        </div>
+        <div class="row flex-end">
+            <div class="col-8 color2">.col-8 .flex-end</div>
+            <div class="col-8 color1">.col-8 .flex-end</div>
+        </div>
+        <div class="row flex-between">
+            <div class="col-6 color2">.col-6 .flex-between</div>
+            <div class="col-6 color1">.col-6 .flex-between</div>
+            <div class="col-6 color2">.col-6 .flex-between</div>
+        </div>
+        <div class="row flex-around">
+            <div class="col-6 color2">.col-6 .flex-around</div>
+            <div class="col-6 color1">.col-6 .flex-around</div>
+            <div class="col-6 color2">.col-6 .flex-around</div>
+        </div>
+        <div class="row flex-evenly">
+            <div class="col-6 color2">.col-6 .flex-evenly</div>
+            <div class="col-6 color1">.col-6 .flex-evenly</div>
+            <div class="col-6 color2">.col-6 .flex-evenly</div>
+        </div>
+        <div class="row">
+            <h2>Responsive</h2>
+        </div>
+        <div class="row">
+            <div
+                class="col-lg-6 col-md-8 col-sm-12 col-xs-24 color1"
+            >col-lg-6 col-md-8 col-sm-12 col-xs-24</div>
+        </div>
+        <div class="row">
+            <div
+                class="col-lg-12 col-md-8 col-sm-4 col-xs-0 color1"
+            >col-lg-12 col-md-8 col-sm-4 col-xs-0</div>
+        </div>
+        <div class="row">
+            <div class="col-12 hidden-md-only color1">col-12 hidden-md-only</div>
+        </div>
+        <div class="row">
+            <div class="col-12 hidden-md-and-up color1">col-12 hidden-md-and-up</div>
+        </div>
+        <div class="row">
+            <div class="col-12 hidden-sm-and-down color1">col-12 hidden-sm-and-down</div>
+        </div>
+    </div>
+</template>
+
+<script>
+export default {};
+</script>
+
+<style lang="stylus" scoped>
+.row {
+    margin: 10px 0;
+}
+
+.row>div {
+    color: white;
+    text-align: center;
+    height: 40px;
+    line-height: 40px;
+    border-radius: 5px;
+}
+
+.color1 {
+    background-color: #4FC3F7;
+}
+
+.color2 {
+    background-color: #B3E5FC;
+}
+
+.color3 {
+    background-color: #E1F5FE;
+}</style>
