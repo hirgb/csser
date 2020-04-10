@@ -19,6 +19,7 @@
         "@vue/cli-plugin-babel": "^4.3.0",
         "@vue/cli-plugin-typescript": "^4.3.0",
         "@vue/cli-service": "^4.3.0",
+        "compression-webpack-plugin": "^3.1.0",
         "log4cli": "^1.0.0",
         "minimist": "^1.2.5",
         "readline-sync": "^1.4.10",
