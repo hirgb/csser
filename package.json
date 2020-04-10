@@ -1,23 +1,30 @@
 {
-  "name": "csser",
-  "version": "0.1.0",
-  "private": true,
-  "scripts": {
-    "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build"
-  },
-  "dependencies": {
-    "core-js": "^3.6.4",
-    "vue": "^2.6.11",
-    "vue-router": "^3.1.6"
-  },
-  "devDependencies": {
-    "@vue/cli-plugin-babel": "^4.3.0",
-    "@vue/cli-plugin-typescript": "^4.3.0",
-    "@vue/cli-service": "^4.3.0",
-    "stylus": "^0.54.7",
-    "stylus-loader": "^3.0.2",
-    "typescript": "~3.8.3",
-    "vue-template-compiler": "^2.6.11"
-  }
+    "name": "csser",
+    "version": "0.1.0",
+    "private": true,
+    "scripts": {
+        "serve": "vue-cli-service serve",
+        "build": "vue-cli-service build",
+        "buildcsser": "node scripts/build.js",
+        "bc": "node scripts/build.js",
+        "buildcsserforpublish": "node scripts/build.js --publish",
+        "bcfp": "node scripts/build.js --publish"
+    },
+    "dependencies": {
+        "core-js": "^3.6.4",
+        "vue": "^2.6.11",
+        "vue-router": "^3.1.6"
+    },
+    "devDependencies": {
+        "@vue/cli-plugin-babel": "^4.3.0",
+        "@vue/cli-plugin-typescript": "^4.3.0",
+        "@vue/cli-service": "^4.3.0",
+        "log4cli": "^1.0.0",
+        "minimist": "^1.2.5",
+        "readline-sync": "^1.4.10",
+        "stylus": "^0.54.7",
+        "stylus-loader": "^3.0.2",
+        "typescript": "~3.8.3",
+        "vue-template-compiler": "^2.6.11"
+    }
 }
