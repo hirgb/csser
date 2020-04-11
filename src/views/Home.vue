@@ -14,7 +14,7 @@
             </div>
         </div>
         <div class="row">
-            <p class="title">一个去框架的、组合灵活、体积小巧的纯css工具库</p>
+            <p class="title">一个去框架、组合灵活、体积小巧的纯css工具库</p>
             <p
                 class="title"
             >A pure CSS tool library with de-framework, flexible combination and small size</p>
