@@ -19,7 +19,6 @@
                 class="title"
             >A pure CSS tool library with de-framework, flexible combination and small size</p>
         </div>
-        <div class="row"></div>
         <div class="row list">
             <div class="row flex-center">
                 <div class="col-xl-4 col-lg-5 col-md-6 col-sm-8 col-xs-24 item">
@@ -46,6 +45,10 @@ export default {};
 <style lang="stylus" scoped>
 a {
     text-decoration: none;
+}
+
+.row {
+    text-align: center;
 }
 
 .title {
