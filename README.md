@@ -17,7 +17,8 @@ A pure CSS tool library with de-framework, flexible combination and small size.
 - Available everywhere.
 
 ## Usage
-- CDN（be provided later）
+- CDN
+  - Import what you need：`<link rel="stylesheet" href="https://unpkg.com/csser/layout.min.css">`
 - NPM
   1. Install：`npm install csser --save`
   2. Import what you need：`import 'csser/layout.min.css'`

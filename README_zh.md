@@ -17,7 +17,8 @@
 - 随处可用。
 
 ## 使用
-- CDN（未提供）
+- CDN
+   - 按需引入：`<link rel="stylesheet" href="https://unpkg.com/csser/layout.min.css">`
 - NPM
   1. 安装：`npm install csser --save`
   2. 按需引入：`import 'csser/layout.min.css'`

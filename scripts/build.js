@@ -11,11 +11,10 @@ const publishDir = path.resolve('./publish');
 const readmePath = path.resolve('./README.md');
 const packagePath = path.resolve('./scripts/package.json');
 
-function render(str) {
+function render(str, compress = true) {
     return new Promise((resolve, reject) => {
         stylus.render(str, {
-            // filename: 'nesting.css'
-            compress: true
+            compress
         }, function (err, css) {
             if (err) reject(err);
             resolve(css)
@@ -30,23 +29,29 @@ async function run() {
         recursive: true
     })
     Log.info(`Delete: ${publishDir}`)
+    if (!fs.existsSync(publishDir)) {
+        fs.mkdirSync(publishDir)
+        Log.info(`Create: ${publishDir}`)
+    }
 
     let files = fs.readdirSync(libDir);
     for (const file of files) {
         const filePath = path.resolve(libDir, file)
         const fileName = file.split('.')[0]
-        // console.log(filePath);
         const stylusStr = fs.readFileSync(filePath, 'utf8')
-        const renderedCSS = await render(stylusStr).catch(err => {
+        const compressedCSS = await render(stylusStr).catch(err => {
             throw err
         })
-        if (!fs.existsSync(publishDir)) {
-            fs.mkdirSync(publishDir)
-            Log.info(`Create: ${publishDir}`)
-        }
-        const outputFilePath = path.resolve(publishDir, `${fileName}.min.css`);
-        fs.writeFileSync(outputFilePath, renderedCSS)
-        Log.info(`Write: ${outputFilePath}`)
+        const renderedCSS = await render(stylusStr, false).catch(err => {
+            throw err
+        })
+        const compressedFilePath = path.resolve(publishDir, `${fileName}.min.css`);
+        fs.writeFileSync(compressedFilePath, compressedCSS)
+        Log.info(`Write: ${compressedFilePath}`)
+
+        const renderedFilePath = path.resolve(publishDir, `${fileName}.css`);
+        fs.writeFileSync(renderedFilePath, renderedCSS)
+        Log.info(`Write: ${renderedFilePath}`)
     }
 
     //准备readme和package.json
@@ -71,8 +76,8 @@ async function run() {
         fs.writeFileSync(packagePath, packageJSON)
         fs.writeFileSync(path.resolve(publishDir, 'package.json'), packageJSON)
         Log.info(`Write: package.json`)
-        Log.success('Done');
     }
+    Log.success('Done');
 }
 
 (async () => {
