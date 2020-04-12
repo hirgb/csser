@@ -1,7 +1,7 @@
 {
     "name": "csser",
     "version": "0.1.0",
-    "description": "Pure css productivity tool",
+    "description": "A pure CSS tool library with de-framework, flexible combination and small size.",
     "main": "",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1"
@@ -19,6 +19,6 @@
         "type": "git",
         "url": "https://github.com/hirgb/csser.git"
     },
-    "homepage": "https://github.com/hirgb/csser",
+    "homepage": "https://hirgb.com/csser",
     "license": "ISC"
 }
