@@ -13,7 +13,7 @@ export default Vue.extend({
 </script>
 
 <style lang="stylus">
-@import url('./lib/layout.css');
+@import url('../publish/layout.min.css');
 
 #app {
     font-family: Avenir, Helvetica, Arial, sans-serif;

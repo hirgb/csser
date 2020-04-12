@@ -6,8 +6,8 @@ const argv = require('minimist')(process.argv.slice(2));
 const publish = argv.publish ? true : false
 const stylus = require('stylus');
 
-const libDir = path.resolve('./src/lib/');
-const publishDir = path.resolve('./publish');
+const libDir = path.resolve('./lib/');
+const publishDir = path.resolve('./publish/');
 const readmePath = path.resolve('./README.md');
 const packagePath = path.resolve('./scripts/package.json');
 

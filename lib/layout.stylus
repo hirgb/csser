@@ -1,0 +1,150 @@
+.row
+    position relative
+    box-sizing: border-box
+    border: none
+    &:not([class*=flex-])
+        &:before,&:after
+            clear both
+            content ''
+            display block
+    //flex
+    &[class*=flex-]
+        display: flex
+        display: -webkit-flex
+        flex-direction: row
+        flex-wrap: wrap
+    &.flex-center
+        justify-content: center
+    &.flex-start
+        justify-content: flex-start
+    &.flex-end
+        justify-content: flex-end
+    &.flex-between
+        justify-content: space-between
+    &.flex-around
+        justify-content: space-around
+    &.flex-evenly
+        justify-content: space-evenly
+
+.row>[class*=col-]
+    box-sizing: border-box
+    border: none
+    float left
+
+//column
+for num in (0..24)
+    .row>.col-{num}
+        if num == 0
+            display: none
+        else
+            width: (num / 24 * 100)%
+
+//offset
+for num in (1..23)
+    .row>[class*=col-].offset-{num}
+        margin-left (num / 24 * 100)%
+
+//responsive
+//xl
+@media only screen and (min-width: 1920px)
+    for num in (0..24)
+        .row>.col-xl-{num}
+            if num == 0
+                display: none
+            else
+                width: (num / 24 * 100)%
+    
+    .hidden-xl-only,
+    .hidden-sm-and-up,
+    .hidden-md-and-up,
+    .hidden-lg-and-up
+        display none
+
+    //offset
+    for num in (1..23)
+        .row>[class*=col-].offset-xl-{num}
+            margin-left (num / 24 * 100)%
+
+//lg
+@media only screen and (min-width: 1200px) and (max-width: 1919px)
+    //column
+    for num in (0..24)
+        .row>.col-lg-{num}
+            if num == 0
+                display: none
+            else
+                width: (num / 24 * 100)%
+    //hidden
+    .hidden-lg-only,
+    .hidden-sm-and-up,
+    .hidden-md-and-up,
+    .hidden-lg-and-down,
+    .hidden-lg-and-up
+        display none
+    
+    //offset
+    for num in (1..23)
+        .row>[class*=col-].offset-lg-{num}
+            margin-left (num / 24 * 100)%
+
+//md
+@media only screen and (min-width: 992px) and (max-width: 1199px)
+    for num in (0..24)
+        .row>.col-md-{num}
+            if num == 0
+                display: none
+            else
+                width: (num / 24 * 100)%
+    
+    .hidden-md-only,
+    .hidden-sm-and-up,
+    .hidden-md-and-down,
+    .hidden-md-and-up,
+    .hidden-lg-and-down
+        display none
+
+    //offset
+    for num in (1..23)
+        .row>[class*=col-].offset-md-{num}
+            margin-left (num / 24 * 100)%
+
+//sm
+@media only screen and (min-width: 768px) and (max-width: 991px)
+    for num in (0..24)
+        .row>.col-sm-{num}
+            if num == 0
+                display: none
+            else
+                width: (num / 24 * 100)%
+    
+    .hidden-sm-only,
+    .hidden-sm-and-down,
+    .hidden-sm-and-up,
+    .hidden-md-and-down,
+    .hidden-lg-and-down
+        display none
+
+    //offset
+    for num in (1..23)
+        .row>[class*=col-].offset-sm-{num}
+            margin-left (num / 24 * 100)%
+
+//xs
+@media only screen and (max-width: 767px)
+    for num in (0..24)
+        .row>.col-xs-{num}
+            if num == 0
+                display: none
+            else
+                width: (num / 24 * 100)%
+    
+    .hidden-xs-only,
+    .hidden-sm-and-down,
+    .hidden-md-and-down,
+    .hidden-lg-and-down
+        display none
+
+    //offset
+    for num in (1..23)
+        .row>[class*=col-].offset-xs-{num}
+            margin-left (num / 24 * 100)%
