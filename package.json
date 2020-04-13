@@ -7,9 +7,10 @@
         "bc": "node scripts/build.js",
         "buildcsserforpublish": "node scripts/build.js --publish",
         "bcfp": "node scripts/build.js --publish",
-        "render": "node scripts/render.js",
+        "rendertemp": "node scripts/render.js",
+        "buildtemp": "node scripts/render.js --save",
         "serve": "parcel src/index.html",
-        "build": "parcel build src/index.html --no-source-maps --no-content-hash --public-url ./ --out-dir docs"
+        "build": "parcel build src/index.html --no-source-maps --no-minify --no-content-hash --public-url ./ --out-dir docs"
     },
     "dependencies": {},
     "devDependencies": {

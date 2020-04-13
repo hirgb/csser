@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="./src/assets/logo.svg">
+  <img src="./src/img/logo.svg">
 </p>
 
 # CSSER
@@ -26,6 +26,7 @@ A pure CSS tool library with de-framework, flexible combination and small size.
 ## Current capabilities
 
 - Layout - layout.min.css
+- Tooltip - tooltip.min.css
 
 ## Planned development capabilities
 

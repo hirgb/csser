@@ -1,0 +1,254 @@
+// Variables
+$tooltipPrefix = 'tooltip-'
+$tooltipFontSize = 12px
+$tooltipFontFamily = 'Helvetica Neue', Helvetica, Arial, sans-serif
+$tooltipVerticalPadding = 8px
+$tooltipHorizontalPadding = 10px
+
+$tooltipTooltipHeight = $tooltipFontSize + 2 * $tooltipVerticalPadding
+$tooltipArrowBorderWidth = 6px
+$tooltipArrowOffsetX = 2 * $tooltipArrowBorderWidth
+
+$tooltipTextShadowDarkenAmount = 25%
+$tooltipTransitionDistance = 8px
+$tooltipShowDelay = 100ms
+$tooltipHideDelay = 0ms
+$tooltipZIndex = 1000000
+
+// color
+$tooltipDefaultColor = hsl(0, 0%, 22%)
+$tooltipErrorColor = hsl(1, 40%, 50%)
+$tooltipWarningColor = hsl(38, 46%, 54%)
+$tooltipInfoColor = hsl(200, 50%, 45%)
+$tooltipSuccessColor = hsl(121, 32%, 40%)
+
+// size
+$tooltipSizeSmall = 80px
+$tooltipSizeMedium = 150px
+$tooltipSizeLarge = 300px
+
+// mixins
+vendor(property, value)
+    {property}  value
+    -moz-{property}  value
+    -webkit-{property}  value
+
+ // top bottom left right
+arrow-border-color(color)
+    &:not([class*={$tooltipPrefix}top]):not([class*={$tooltipPrefix}bottom]):not([class*={$tooltipPrefix}left]):not([class*={$tooltipPrefix}right]):before
+        border-top-color: color
+    for position in top  bottom  left  right
+        if position == top or position == bottom
+            for xDir in left  right
+                &.{$tooltipPrefix}{position}-{xDir}:before
+                    border-{position}-color: color
+
+        &.{$tooltipPrefix}{position}:before
+            border-{position}-color: color
+
+set-margin(property, transitionDirection, $translateX=0)
+    $value = unquote((property) + '('+ $tooltipTransitionDistance * transitionDirection +')')
+    &:before
+        vendor('transform', $value)
+    &:after
+        if $translateX != 0
+            vendor('transform', translateX($translateX) $value)
+        else
+            vendor('transform', $value)
+
+vertical-positioned-tooltip(propertyY, transitionDirection, $xDirection=0)
+    &:before
+        margin-{propertyY}: -2 * $tooltipArrowBorderWidth + 1
+
+    &:before, &:after
+        {propertyY}: 100%
+        left: 50%
+
+    &:before
+        left  unquote(calc(50% - 6px))
+    $translateX = -50%
+    if $xDirection == -1
+        $translateX = -100%
+
+    else if $xDirection == 1
+        $translateX = 0
+
+    &:after
+        vendor('transform', translateX($translateX))
+
+    &:after
+        if $xDirection != 0
+            margin-left: - ($xDirection * $tooltipArrowOffsetX)
+
+    &:hover, &:focus
+        set-margin('translateY', transitionDirection, $translateX)
+
+horizontal-positioned-tooltip(propertyX, transitionDirection)
+    &:before
+        margin-{propertyX}: -2 * $tooltipArrowBorderWidth + 1
+        margin-bottom: -1 * $tooltipArrowBorderWidth
+
+    &:after
+        margin-bottom: -1 * floor($tooltipTooltipHeight / 2)
+
+    &:before, &:after
+        {propertyX}: 100%
+        bottom: 50%
+
+    &:hover, &:focus
+        set-margin('translateX', transitionDirection)
+
+// color
+tooltip-type($color)
+    &:after
+        background-color: $color
+        text-shadow: 0 -1px 0px darken($color, $tooltipTextShadowDarkenAmount)
+    arrow-border-color($color)
+
+// style
+[data-tooltip]
+    position: relative
+    display: inline-block
+
+    &:before,
+    &:after
+        border-radius 4px
+        position absolute
+        vendor('transform', translate3d(0, 0, 0))
+
+        visibility hidden
+        opacity 0
+        z-index $tooltipZIndex
+        pointer-events: none
+
+        vendor('transition', 0.3s ease)
+        vendor('transition-delay', $tooltipHideDelay)
+
+    &:hover:before,
+    &:hover:after
+        visibility  visible
+        opacity 1
+
+    &:hover:before,
+    &:hover:after
+        vendor('transition-delay', $tooltipShowDelay)
+    &:before
+        content: ''
+        position: absolute
+        background: transparent
+        border: $tooltipArrowBorderWidth solid transparent
+        z-index: $tooltipZIndex + 1
+    &:after
+        content: attr(data-tooltip)
+        background: $tooltipDefaultColor
+        color: white
+        padding: $tooltipVerticalPadding $tooltipHorizontalPadding
+        font-size: $tooltipFontSize
+        font-family: $tooltipFontFamily
+        line-height: $tooltipFontSize
+        white-space: nowrap
+
+[data-tooltip='']
+    &:before,
+    &:after
+        display: none !important
+
+[data-tooltip]
+    &:after
+        text-shadow: 0 -1px 0px darken($tooltipDefaultColor, $tooltipTextShadowDarkenAmount)
+        box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3)
+
+arrow-border-color($tooltipDefaultColor)
+
+[data-tooltip]:not([class*={$tooltipPrefix}top]):not([class*={$tooltipPrefix}bottom]):not([class*={$tooltipPrefix}left]):not([class*={$tooltipPrefix}right])
+    vertical-positioned-tooltip('bottom', -1)
+
+.{$tooltipPrefix}top
+    vertical-positioned-tooltip('bottom', -1)
+
+.{$tooltipPrefix}bottom
+    vertical-positioned-tooltip('top', 1)
+
+.{$tooltipPrefix}right
+    horizontal-positioned-tooltip('left', 1)
+
+.{$tooltipPrefix}left
+    horizontal-positioned-tooltip('right', -1)
+
+.{$tooltipPrefix}top-left
+    vertical-positioned-tooltip('bottom', -1, -1)
+
+.{$tooltipPrefix}top-right
+    vertical-positioned-tooltip('bottom', -1, 1)
+
+.{$tooltipPrefix}bottom-left
+    vertical-positioned-tooltip('top', 1, -1)
+
+.{$tooltipPrefix}bottom-right
+    vertical-positioned-tooltip('top', 1, 1)
+
+// size
+.{$tooltipPrefix}small,
+.{$tooltipPrefix}medium,
+.{$tooltipPrefix}large
+    &:after
+        white-space: normal
+        line-height: 1.4em
+
+.{$tooltipPrefix}small
+    &:after
+        width: $tooltipSizeSmall
+
+.{$tooltipPrefix}medium
+    &:after
+        width: $tooltipSizeMedium
+
+.{$tooltipPrefix}large
+    &:after
+        width: $tooltipSizeLarge
+
+.{$tooltipPrefix}always
+    &:after,
+    &:before
+        opacity: 1
+        visibility: visible
+    
+    &:not([class*={$tooltipPrefix}top]):not([class*={$tooltipPrefix}bottom]):not([class*={$tooltipPrefix}left]):not([class*={$tooltipPrefix}right])
+        set-margin('translateY', -1, -50%)
+        &-left
+            set-margin('translateY', -1, -100%)
+        &-right
+            set-margin('translateY', -1, 0)
+
+    &.{$tooltipPrefix}top
+        set-margin('translateY', -1, -50%)
+        &-left
+            set-margin('translateY', -1, -100%)
+        &-right
+            set-margin('translateY', -1, 0)
+
+    &.{$tooltipPrefix}bottom
+        set-margin('translateY', 1, -50%)
+        &-left
+            set-margin('translateY', 1, -100%)
+
+        &-right
+            set-margin('translateY', 1, 0)
+
+    &.{$tooltipPrefix}left
+        set-margin('translateX', -1)
+    &.{$tooltipPrefix}right
+        set-margin('translateX', 1)
+
+// color
+.{$tooltipPrefix}error
+    tooltip-type($tooltipErrorColor)
+
+.{$tooltipPrefix}warning
+    tooltip-type($tooltipWarningColor)
+
+.{$tooltipPrefix}info
+    tooltip-type($tooltipInfoColor)
+
+.{$tooltipPrefix}success
+    tooltip-type($tooltipSuccessColor)

@@ -4,3 +4,7 @@ body {
     -moz-osx-font-smoothing: grayscale;
     color: #783a8a;
 }
+
+h1 {
+    text-align: center;
+}

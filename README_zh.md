@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="./src/assets/logo.svg">
+  <img src="./src/img/logo.svg">
 </p>
 
 # CSSER
@@ -26,6 +26,7 @@
 ## 目前提供的能力
 
 - 布局 - layout.min.css
+- 提示 - tooltip.min.css
 
 ## 计划开发的能力
 
