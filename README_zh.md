@@ -27,10 +27,10 @@
 
 - 布局 - layout.min.css
 - 提示 - tooltip.min.css
+- 加载 - loading/*.css
 
 ## 计划开发的能力
 
 - 主题 - theme.min.css
-- 加载 - loading/*.css
 - 按钮 - buttons/*.css
 - 动画 - animation/*.css
