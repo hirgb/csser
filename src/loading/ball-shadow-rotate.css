@@ -1,0 +1,30 @@
+.ball-shadow-rotate {
+    font-size: 10px;
+    position: relative;
+    text-indent: -9999em;
+    border-top: .5em solid #ff000030;
+    border-right: .5em solid #ff000030;
+    border-bottom: .5em solid #ff000030;
+    border-left: .5em solid red;
+    -webkit-animation: ball-shadow-rotate 1.1s infinite linear;
+    animation: ball-shadow-rotate 1.1s infinite linear;
+}
+
+.ball-shadow-rotate,
+.ball-shadow-rotate:after {
+    border-radius: 50%;
+    width: 4em;
+    height: 4em;
+}
+
+@keyframes ball-shadow-rotate {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}

@@ -1,0 +1,48 @@
+.bar-scale,
+.bar-scale:before,
+.bar-scale:after {
+    background: red;
+    -webkit-animation: bar-scale 1s infinite ease-in-out;
+    animation: bar-scale 1s infinite ease-in-out;
+    width: 1em;
+    height: 3em;
+}
+
+.bar-scale:before,
+.bar-scale:after {
+    position: absolute;
+    top: 0;
+    content: '';
+}
+
+.bar-scale:before {
+    left: -1.5em;
+}
+
+.bar-scale {
+    position: relative;
+    font-size: 8px;
+    -webkit-animation-delay: 0.16s;
+    animation-delay: 0.16s;
+}
+
+.bar-scale:after {
+    left: 1.5em;
+    -webkit-animation-delay: 0.32s;
+    animation-delay: 0.32s;
+}
+
+@keyframes bar-scale {
+
+    0%,
+    80%,
+    100% {
+        box-shadow: 0 0 red;
+        height: 3em;
+    }
+
+    40% {
+        box-shadow: 0 -2em red;
+        height: 4em;
+    }
+}
