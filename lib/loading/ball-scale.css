@@ -1,13 +1,11 @@
 .ball-scale {
-    height: 60px;
-    width: 60px;
+    font-size: 10px;
+    height: 6em;
+    width: 6em;
     -webkit-animation: ball-scale 1s 0s ease-in-out infinite;
     animation: ball-scale 1s 0s ease-in-out infinite;
-
     background-color: red;
-    border-radius: 100%;
-    margin: 2px;
-    display: inline-block;
+    border-radius: 50%;
 }
 
 @keyframes ball-scale {
