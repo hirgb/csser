@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" sizes="16x16" href="logo16.8e4ee602.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="logo32.c336e171.png">
+    <link rel="stylesheet" href="main.c52e0fe2.css">
+    <link rel="stylesheet" href="layout.min.d98de16f.css">
+    <link rel="stylesheet" href="tooltip.min.eaf6b4d4.css">
+    <link rel="stylesheet" href="circle-clip-rotate.87d471c0.css">
+    <link rel="stylesheet" href="square-spin.0e53b529.css">
+    <link rel="stylesheet" href="ball-three-rotate.622a4a3d.css">
+    <link rel="stylesheet" href="ball-scale.5be1a53b.css">
+    <link rel="stylesheet" href="circle-scale.3f16f4f4.css">
+    <link rel="stylesheet" href="bar-scale.7b805f07.css">
+    <link rel="stylesheet" href="circle-shadow-rotate.1cb056dc.css">
+    <link rel="stylesheet" href="ball-three-opacity.c5158ebb.css">
+    <title>Loading</title>
+    <style>.loading-wrap {
+            display: flex;
+            height: 60px;
+            margin: 40px 0;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+        }</style>
+</head>
+
+<body>
+    <div class="row flex-center">
+        <div class="col-xl-12 col-lg-16 col-md-24 col-sm-24 col-xs-24">
+            <h1>Loading</h1>
+            <p>
+                For ease of use, the animations on this page are all based on a div element,and can be configured
+                through the <code>background-color</code> and
+                <code>font-size</code> properties.Please check the webpage source code directly for specific usage.
+            </p>
+            <p>
+                为方便使用，本页动画全部基于一个div元素生成，
+                并且可以通过<code>background-color</code>和<code>font-size</code>属性进行配置。
+                请直接查看网页源码，以获取具体使用方法。
+            </p>
+            <h2>Usage</h2>
+            <div class="row">
+                <code>
+                    <script type="text/html" style="display:block; overflow: auto">
+                        import 'csser/loading/*.min.css'
+                    </script>
+                    <script type="text/html" style="display:block; overflow: auto">
+                        <link rel='stylesheet' href='https://unpkg.com/csser/loading/*.min.css'>
+                    </script>
+                </code>
+                <p>"*" Replaced with animation name</p>
+                <p>“*”替换为动画名称</p>
+            </div>
+            <div class="row">
+                <div class="col-6 col-xs-12 loading-wrap" data-tooltip="circle-clip-rotate">
+                    <div class="circle-clip-rotate"></div>
+                </div>
+                <div class="col-6 col-xs-12 loading-wrap" data-tooltip="circle-shadow-rotate">
+                    <div class="circle-shadow-rotate"></div>
+                </div>
+                <div class="col-6 col-xs-12 loading-wrap" data-tooltip="ball-scale">
+                    <div class="ball-scale"></div>
+                </div>
+                <div class="col-6 col-xs-12 loading-wrap" data-tooltip="circle-scale">
+                    <div class="circle-scale"></div>
+                </div>
+                <div class="col-6 col-xs-12 loading-wrap" data-tooltip="square-spin">
+                    <div class="square-spin" style="background-color: cyan;"></div>
+                </div>
+                <div class="col-6 col-xs-12 loading-wrap" data-tooltip="bar-scale">
+                    <div class="bar-scale" style="background-color: gold;"></div>
+                </div>
+                <div class="col-6 col-xs-12 loading-wrap" data-tooltip="ball-three-rotate">
+                    <div class="ball-three-rotate" style="background-color:deeppink"></div>
+                </div>
+                <div class="col-6 col-xs-12 loading-wrap" data-tooltip="ball-three-opacity">
+                    <div class="ball-three-opacity" style="background-color: blue; font-size: 5px;"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

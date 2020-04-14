@@ -22,6 +22,43 @@ function render(str, compress = true) {
     })
 }
 
+async function renderFile(originFile, targetDir) {
+    const fileName = path.basename(originFile).split('.')[0]
+    const stylusStr = fs.readFileSync(originFile, 'utf8')
+    const compressedCSS = await render(stylusStr).catch(err => {
+        throw err
+    })
+    const renderedCSS = await render(stylusStr, false).catch(err => {
+        throw err
+    })
+    const compressedFilePath = path.resolve(targetDir, `${fileName}.min.css`);
+    fs.writeFileSync(compressedFilePath, compressedCSS)
+    Log.info(`Write: ${compressedFilePath}`)
+
+    const renderedFilePath = path.resolve(targetDir, `${fileName}.css`);
+    fs.writeFileSync(renderedFilePath, renderedCSS)
+    Log.info(`Write: ${renderedFilePath}`)
+}
+
+async function renderDirectory(libDir, targetDir) {
+    if (!fs.existsSync(targetDir)) {
+        fs.mkdirSync(targetDir)
+        Log.info(`Create: ${targetDir}`)
+    }
+
+    let files = fs.readdirSync(libDir);
+    for (const file of files) {
+        const origin = path.resolve(libDir, file)
+        const target = path.resolve(targetDir, file)
+        const stat = fs.lstatSync(origin)
+        if (stat.isFile()) {
+            await renderFile(origin, targetDir)
+        } else if (stat.isDirectory()) {
+            await renderDirectory(origin, target)
+        }
+    }
+}
+
 async function run() {
     Log.info('Start')
     //删除publish目录
@@ -34,25 +71,7 @@ async function run() {
         Log.info(`Create: ${publishDir}`)
     }
 
-    let files = fs.readdirSync(libDir);
-    for (const file of files) {
-        const filePath = path.resolve(libDir, file)
-        const fileName = file.split('.')[0]
-        const stylusStr = fs.readFileSync(filePath, 'utf8')
-        const compressedCSS = await render(stylusStr).catch(err => {
-            throw err
-        })
-        const renderedCSS = await render(stylusStr, false).catch(err => {
-            throw err
-        })
-        const compressedFilePath = path.resolve(publishDir, `${fileName}.min.css`);
-        fs.writeFileSync(compressedFilePath, compressedCSS)
-        Log.info(`Write: ${compressedFilePath}`)
-
-        const renderedFilePath = path.resolve(publishDir, `${fileName}.css`);
-        fs.writeFileSync(renderedFilePath, renderedCSS)
-        Log.info(`Write: ${renderedFilePath}`)
-    }
+    await renderDirectory(libDir, publishDir)
 
     //准备readme和package.json
     if (publish) {
