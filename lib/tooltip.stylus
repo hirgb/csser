@@ -35,8 +35,6 @@ vendor(property, value)
 
  // top bottom left right
 arrow-border-color(color)
-    &:not([class*={$tooltipPrefix}top]):not([class*={$tooltipPrefix}bottom]):not([class*={$tooltipPrefix}left]):not([class*={$tooltipPrefix}right]):before
-        border-top-color: color
     for position in top  bottom  left  right
         if position == top or position == bottom
             for xDir in left  right
@@ -242,13 +240,21 @@ arrow-border-color($tooltipDefaultColor)
 
 // color
 .{$tooltipPrefix}error
+    &:not([class*={$tooltipPrefix}top]):not([class*={$tooltipPrefix}bottom]):not([class*={$tooltipPrefix}left]):not([class*={$tooltipPrefix}right]):before
+        border-top-color: $tooltipErrorColor
     tooltip-type($tooltipErrorColor)
 
 .{$tooltipPrefix}warning
+    &:not([class*={$tooltipPrefix}top]):not([class*={$tooltipPrefix}bottom]):not([class*={$tooltipPrefix}left]):not([class*={$tooltipPrefix}right]):before
+        border-top-color: $tooltipErrorColor
     tooltip-type($tooltipWarningColor)
 
 .{$tooltipPrefix}info
+    &:not([class*={$tooltipPrefix}top]):not([class*={$tooltipPrefix}bottom]):not([class*={$tooltipPrefix}left]):not([class*={$tooltipPrefix}right]):before
+        border-top-color: $tooltipErrorColor
     tooltip-type($tooltipInfoColor)
 
 .{$tooltipPrefix}success
+    &:not([class*={$tooltipPrefix}top]):not([class*={$tooltipPrefix}bottom]):not([class*={$tooltipPrefix}left]):not([class*={$tooltipPrefix}right]):before
+            border-top-color: $tooltipErrorColor
     tooltip-type($tooltipSuccessColor)

@@ -56,9 +56,6 @@
   text-shadow: 0 -1px 0px #2a2a2a;
   box-shadow: 2px 2px 4px rgba(0,0,0,0.3);
 }
-:not([class*=tooltip-top]):not([class*=tooltip-bottom]):not([class*=tooltip-left]):not([class*=tooltip-right]):before {
-  border-top-color: #383838;
-}
 .tooltip-top-left:before {
   border-top-color: #383838;
 }
@@ -469,12 +466,12 @@
   -moz-transform: translateX(8px);
   -webkit-transform: translateX(8px);
 }
+.tooltip-error:not([class*=tooltip-top]):not([class*=tooltip-bottom]):not([class*=tooltip-left]):not([class*=tooltip-right]):before {
+  border-top-color: #b34e4d;
+}
 .tooltip-error:after {
   background-color: #b34e4d;
   text-shadow: 0 -1px 0px #863b39;
-}
-.tooltip-error:not([class*=tooltip-top]):not([class*=tooltip-bottom]):not([class*=tooltip-left]):not([class*=tooltip-right]):before {
-  border-top-color: #b34e4d;
 }
 .tooltip-error.tooltip-top-left:before {
   border-top-color: #b34e4d;
@@ -500,12 +497,12 @@
 .tooltip-error.tooltip-right:before {
   border-right-color: #b34e4d;
 }
+.tooltip-warning:not([class*=tooltip-top]):not([class*=tooltip-bottom]):not([class*=tooltip-left]):not([class*=tooltip-right]):before {
+  border-top-color: #b34e4d;
+}
 .tooltip-warning:after {
   background-color: #c09854;
   text-shadow: 0 -1px 0px #977438;
-}
-.tooltip-warning:not([class*=tooltip-top]):not([class*=tooltip-bottom]):not([class*=tooltip-left]):not([class*=tooltip-right]):before {
-  border-top-color: #c09854;
 }
 .tooltip-warning.tooltip-top-left:before {
   border-top-color: #c09854;
@@ -531,12 +528,12 @@
 .tooltip-warning.tooltip-right:before {
   border-right-color: #c09854;
 }
+.tooltip-info:not([class*=tooltip-top]):not([class*=tooltip-bottom]):not([class*=tooltip-left]):not([class*=tooltip-right]):before {
+  border-top-color: #b34e4d;
+}
 .tooltip-info:after {
   background-color: #3986ac;
   text-shadow: 0 -1px 0px #2b6481;
-}
-.tooltip-info:not([class*=tooltip-top]):not([class*=tooltip-bottom]):not([class*=tooltip-left]):not([class*=tooltip-right]):before {
-  border-top-color: #3986ac;
 }
 .tooltip-info.tooltip-top-left:before {
   border-top-color: #3986ac;
@@ -562,12 +559,12 @@
 .tooltip-info.tooltip-right:before {
   border-right-color: #3986ac;
 }
+.tooltip-success:not([class*=tooltip-top]):not([class*=tooltip-bottom]):not([class*=tooltip-left]):not([class*=tooltip-right]):before {
+  border-top-color: #b34e4d;
+}
 .tooltip-success:after {
   background-color: #458746;
   text-shadow: 0 -1px 0px #346535;
-}
-.tooltip-success:not([class*=tooltip-top]):not([class*=tooltip-bottom]):not([class*=tooltip-left]):not([class*=tooltip-right]):before {
-  border-top-color: #458746;
 }
 .tooltip-success.tooltip-top-left:before {
   border-top-color: #458746;
