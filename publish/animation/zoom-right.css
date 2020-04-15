@@ -1,0 +1,115 @@
+.zoom-right {
+  --duration: 0.5s;
+  animation: zoom-right-in var(--duration) both;
+}
+.zoom-right[data-action=enter] {
+  animation: zoom-right-in var(--duration) both;
+}
+.zoom-right[data-action=leave] {
+  animation: zoom-right-out var(--duration) both;
+}
+.zoom-right[data-trigger=hover]:hover {
+  animation: zoom-right-out var(--duration) both;
+}
+.zoom-right[data-trigger=active]:active {
+  animation: zoom-right-out var(--duration) both;
+}
+.zoom-right[data-trigger=focus]:focus {
+  animation: zoom-right-out var(--duration) both;
+}
+@-moz-keyframes zoom-right-in {
+  0% {
+    opacity: 0;
+    transform: scaleX(0);
+    transform-origin: right;
+  }
+  100% {
+    opacity: 1;
+    transform: scaleX(1);
+    transform-origin: right;
+  }
+}
+@-webkit-keyframes zoom-right-in {
+  0% {
+    opacity: 0;
+    transform: scaleX(0);
+    transform-origin: right;
+  }
+  100% {
+    opacity: 1;
+    transform: scaleX(1);
+    transform-origin: right;
+  }
+}
+@-o-keyframes zoom-right-in {
+  0% {
+    opacity: 0;
+    transform: scaleX(0);
+    transform-origin: right;
+  }
+  100% {
+    opacity: 1;
+    transform: scaleX(1);
+    transform-origin: right;
+  }
+}
+@keyframes zoom-right-in {
+  0% {
+    opacity: 0;
+    transform: scaleX(0);
+    transform-origin: right;
+  }
+  100% {
+    opacity: 1;
+    transform: scaleX(1);
+    transform-origin: right;
+  }
+}
+@-moz-keyframes zoom-right-out {
+  0% {
+    opacity: 1;
+    transform: scaleX(1);
+    transform-origin: right;
+  }
+  100% {
+    opacity: 0;
+    transform: scaleX(0);
+    transform-origin: right;
+  }
+}
+@-webkit-keyframes zoom-right-out {
+  0% {
+    opacity: 1;
+    transform: scaleX(1);
+    transform-origin: right;
+  }
+  100% {
+    opacity: 0;
+    transform: scaleX(0);
+    transform-origin: right;
+  }
+}
+@-o-keyframes zoom-right-out {
+  0% {
+    opacity: 1;
+    transform: scaleX(1);
+    transform-origin: right;
+  }
+  100% {
+    opacity: 0;
+    transform: scaleX(0);
+    transform-origin: right;
+  }
+}
+@keyframes zoom-right-out {
+  0% {
+    opacity: 1;
+    transform: scaleX(1);
+    transform-origin: right;
+  }
+  100% {
+    opacity: 0;
+    transform: scaleX(0);
+    transform-origin: right;
+  }
+}

@@ -7,14 +7,9 @@
     <title>csser | 一个去框架、组合灵活、体积小巧的纯css工具库</title>
     <link rel="icon" type="image/png" sizes="16x16" href="logo16.8e4ee602.png">
     <link rel="icon" type="image/png" sizes="32x32" href="logo32.c336e171.png">
-    <link rel="stylesheet" href="layout.min.d98de16f.css">
+    <link rel="stylesheet" href="//unpkg.com/csser/layout.min.css">
     <link rel="stylesheet" href="main.c52e0fe2.css">
-    <style>a {
-            color: #783a8a;
-            text-decoration: none;
-        }
-
-        .row {
+    <style>.row {
             text-align: center;
         }
 
@@ -43,47 +38,65 @@
 </head>
 
 <body>
-    <div>
-        <div class="row hidden-xs-only">
-            <div class="col-24">
-                <img alt="logo" style="width: 800px" src="logo.f1d8a4c6.svg">
+    <div class="row flex-center">
+        <div class="col-xl-12 col-lg-16 col-md-24 col-sm-24 col-xs-24">
+            <div class="row hidden-xs-only">
+                <div class="col-24">
+                    <img alt="logo" style="width: 800px" src="logo.f1d8a4c6.svg">
+                </div>
             </div>
-        </div>
-        <div class="row hidden-sm-and-up">
-            <div class="col-24">
-                <img style="width: 60%" src="magic-hat.1ba382cc.svg" alt="logo">
+            <div class="row hidden-sm-and-up">
+                <div class="col-24">
+                    <img style="width: 60%" src="magic-hat.1ba382cc.svg" alt="logo">
+                </div>
+                <div class="col-24">
+                    <img style="width: 80%" src="csser.d8ec294c.svg" alt="csser">
+                </div>
             </div>
-            <div class="col-24">
-                <img style="width: 80%" src="csser.d8ec294c.svg" alt="csser">
+            <div class="row">
+                <p class="title">一个去框架、组合灵活、体积小巧的纯css工具库</p>
+                <p class="title">A pure CSS tool library with de-framework, flexible combination and small size</p>
             </div>
-        </div>
-        <div class="row">
-            <p class="title">一个去框架、组合灵活、体积小巧的纯css工具库</p>
-            <p class="title">A pure CSS tool library with de-framework, flexible combination and small size</p>
-        </div>
-        <div class="row list">
+            <div class="row list">
+                <div class="row flex-center">
+                    <div class="col-8 col-xs-24 item">
+                        <a href="layout.html" target="_self" rel="noopener noreferrer">
+                            <div>布局 - Layout</div>
+                        </a>
+                    </div>
+                    <div class="col-8 col-xs-24 item">主题 - Theme</div>
+                    <div class="col-8 col-xs-24 item">
+                        <a href="loading.html" target="_self" rel="noopener noreferrer">
+                            <div>加载 - Loading</div>
+                        </a>
+                    </div>
+                </div>
+                <div class="row flex-center">
+                    <div class="col-8 col-xs-24 item">按钮 - Buttons</div>
+                    <div class="col-8 col-xs-24 item">
+                        <a href="tooltip.html" target="_self" rel="noopener noreferrer">
+                            <div>提示 - Tooltip</div>
+                        </a>
+                    </div>
+                    <!-- <div class="col-8 col-xs-24 item">阴影 - Shadow</div> -->
+                    <div class="col-8 col-xs-24 item">
+                        <a href="animation.html" target="_self" rel="noopener noreferrer">
+                            <div>动画 - Animation</div>
+                        </a>
+                    </div>
+                </div>
+            </div>
             <div class="row flex-center">
-                <div class="col-xl-4 col-lg-5 col-md-6 col-sm-8 col-xs-24 item">
-                    <a href="layout.html" target="_self" rel="noopener noreferrer">
-                        <div>布局 - Layout</div>
-                    </a>
+                <div class="col-24 copyright">
+                    <p>
+                        <a target="_black" href="https://unpkg.com/browse/csser/">npm包版本列表及文件</a>
+                    </p>
                 </div>
-                <div class="col-xl-4 col-lg-5 col-md-6 col-sm-8 col-xs-24 item">主题 - Theme</div>
-                <div class="col-xl-4 col-lg-5 col-md-6 col-sm-8 col-xs-24 item">
-                    <a href="loading.html" target="_self" rel="noopener noreferrer">
-                        <div>加载 - Loading</div>
-                    </a>
+                <div class="col-24 copyright">
+                    <p>
+                        author: hirgb.com
+                    </p>
                 </div>
-            </div>
-            <div class="row flex-center">
-                <div class="col-xl-4 col-lg-5 col-md-6 col-sm-8 col-xs-24 item">按钮 - Buttons</div>
-                <div class="col-xl-4 col-lg-5 col-md-6 col-sm-8 col-xs-24 item">
-                    <a href="tooltip.html" target="_self" rel="noopener noreferrer">
-                        <div>提示 - Tooltip</div>
-                    </a>
-                </div>
-                <!-- <div class="col-xl-4 col-lg-5 col-md-6 col-sm-8 col-xs-24 item">阴影 - Shadow</div> -->
-                <div class="col-xl-4 col-lg-5 col-md-6 col-sm-8 col-xs-24 item">动画 - Animation</div>
             </div>
         </div>
     </div>

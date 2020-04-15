@@ -1,0 +1,48 @@
+.slide-left {
+    --duration: .5s;
+    animation: slide-left-in var(--duration) both;
+}
+
+.slide-left[data-action=enter] {
+    animation: slide-left-in var(--duration) both;
+}
+
+.slide-left[data-action=leave] {
+    animation: slide-left-out var(--duration) both;
+}
+
+.slide-left[data-trigger=hover]:hover {
+    animation: slide-left-out var(--duration) both;
+}
+
+.slide-left[data-trigger=active]:active {
+    animation: slide-left-out var(--duration) both;
+}
+
+.slide-left[data-trigger=focus]:focus {
+    animation: slide-left-out var(--duration) both;
+}
+
+@keyframes slide-left-in {
+    0% {
+        opacity: 0;
+        transform: translateX(-70%);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slide-left-out {
+    0% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateX(-70%);
+    }
+}

@@ -1,10 +1,29 @@
+:root {
+    /* font-size: calc(1vw + 1vh); */
+    --main-color: #783a8a;
+    --example-color-1: #8e4ea0;
+    --example-color-2: #a567b6;
+    --example-color-3: #ba81ca;
+}
+
 body {
     font-family: Avenir, Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    color: #783a8a;
+    color: var(--main-color);
 }
 
 h1 {
+    text-align: center;
+}
+
+a {
+    color: var(--main-color);
+    text-decoration: none;
+}
+
+.copyright {
+    font-size: var(--font-size);
+    color: var(--main-color);
     text-align: center;
 }

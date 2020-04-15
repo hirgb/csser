@@ -1,0 +1,48 @@
+.zoom-x-center {
+    --duration: .5s;
+    animation: zoom-x-center-in var(--duration) both;
+}
+
+.zoom-x-center[data-action=enter] {
+    animation: zoom-x-center-in var(--duration) both;
+}
+
+.zoom-x-center[data-action=leave] {
+    animation: zoom-x-center-out var(--duration) both;
+}
+
+.zoom-x-center[data-trigger=hover]:hover {
+    animation: zoom-x-center-out var(--duration) both;
+}
+
+.zoom-x-center[data-trigger=active]:active {
+    animation: zoom-x-center-out var(--duration) both;
+}
+
+.zoom-x-center[data-trigger=focus]:focus {
+    animation: zoom-x-center-out var(--duration) both;
+}
+
+@keyframes zoom-x-center-in {
+    0% {
+        opacity: 0;
+        transform: scaleX(0);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scaleX(1);
+    }
+}
+
+@keyframes zoom-x-center-out {
+    0% {
+        opacity: 1;
+        transform: scaleX(1);
+    }
+
+    100% {
+        opacity: 0;
+        transform: scaleX(0);
+    }
+}

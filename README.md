@@ -28,9 +28,9 @@ A pure CSS tool library with de-framework, flexible combination and small size.
 - Layout - layout.min.css
 - Tooltip - tooltip.min.css
 - Loading - loading/*.css
+- Animation - animation/*.css
 
 ## Planned development capabilities
 
 - Theme - theme.min.css
 - Buttons - buttons/*.css
-- Animation - animation/*.css

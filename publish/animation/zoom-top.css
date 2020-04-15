@@ -1,0 +1,115 @@
+.zoom-top {
+  --duration: 0.5s;
+  animation: zoom-top-in var(--duration) both;
+}
+.zoom-top[data-action=enter] {
+  animation: zoom-top-in var(--duration) both;
+}
+.zoom-top[data-action=leave] {
+  animation: zoom-top-out var(--duration) both;
+}
+.zoom-top[data-trigger=hover]:hover {
+  animation: zoom-top-out var(--duration) both;
+}
+.zoom-top[data-trigger=active]:active {
+  animation: zoom-top-out var(--duration) both;
+}
+.zoom-top[data-trigger=focus]:focus {
+  animation: zoom-top-out var(--duration) both;
+}
+@-moz-keyframes zoom-top-in {
+  0% {
+    opacity: 0;
+    transform: scaleY(0);
+    transform-origin: top;
+  }
+  100% {
+    opacity: 1;
+    transform: scaleY(1);
+    transform-origin: top;
+  }
+}
+@-webkit-keyframes zoom-top-in {
+  0% {
+    opacity: 0;
+    transform: scaleY(0);
+    transform-origin: top;
+  }
+  100% {
+    opacity: 1;
+    transform: scaleY(1);
+    transform-origin: top;
+  }
+}
+@-o-keyframes zoom-top-in {
+  0% {
+    opacity: 0;
+    transform: scaleY(0);
+    transform-origin: top;
+  }
+  100% {
+    opacity: 1;
+    transform: scaleY(1);
+    transform-origin: top;
+  }
+}
+@keyframes zoom-top-in {
+  0% {
+    opacity: 0;
+    transform: scaleY(0);
+    transform-origin: top;
+  }
+  100% {
+    opacity: 1;
+    transform: scaleY(1);
+    transform-origin: top;
+  }
+}
+@-moz-keyframes zoom-top-out {
+  0% {
+    opacity: 1;
+    transform: scaleY(1);
+    transform-origin: top;
+  }
+  100% {
+    opacity: 0;
+    transform: scaleY(0);
+    transform-origin: top;
+  }
+}
+@-webkit-keyframes zoom-top-out {
+  0% {
+    opacity: 1;
+    transform: scaleY(1);
+    transform-origin: top;
+  }
+  100% {
+    opacity: 0;
+    transform: scaleY(0);
+    transform-origin: top;
+  }
+}
+@-o-keyframes zoom-top-out {
+  0% {
+    opacity: 1;
+    transform: scaleY(1);
+    transform-origin: top;
+  }
+  100% {
+    opacity: 0;
+    transform: scaleY(0);
+    transform-origin: top;
+  }
+}
+@keyframes zoom-top-out {
+  0% {
+    opacity: 1;
+    transform: scaleY(1);
+    transform-origin: top;
+  }
+  100% {
+    opacity: 0;
+    transform: scaleY(0);
+    transform-origin: top;
+  }
+}

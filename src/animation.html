@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" sizes="16x16" href="./img/logo16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./img/logo32.png">
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="//unpkg.com/csser/layout.min.css">
+    <link rel="stylesheet" href="//unpkg.com/csser/animation/fade.min.css">
+    <link rel="stylesheet" href="//unpkg.com/csser/animation/zoom-center.min.css">
+    <link rel="stylesheet" href="//unpkg.com/csser/animation/zoom-x-center.min.css">
+    <link rel="stylesheet" href="//unpkg.com/csser/animation/zoom-y-center.min.css">
+    <link rel="stylesheet" href="//unpkg.com/csser/animation/zoom-left.min.css">
+    <link rel="stylesheet" href="//unpkg.com/csser/animation/zoom-right.min.css">
+    <link rel="stylesheet" href="//unpkg.com/csser/animation/zoom-top.min.css">
+    <link rel="stylesheet" href="//unpkg.com/csser/animation/zoom-bottom.min.css">
+    <link rel="stylesheet" href="//unpkg.com/csser/animation/slide-left.min.css">
+    <link rel="stylesheet" href="//unpkg.com/csser/animation/slide-right.min.css">
+    <link rel="stylesheet" href="//unpkg.com/csser/animation/slide-top.min.css">
+    <link rel="stylesheet" href="//unpkg.com/csser/animation/slide-bottom.min.css">
+    <title>Animation</title>
+    <style>
+        .item {
+            display: flex;
+            height: 15vw;
+            max-height: 100px;
+            background-color: var(--example-color-1);
+            border-radius: 5px;
+            color: white;
+            text-align: center;
+            margin: 20px 0;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="row flex-center">
+        <div class="col-xl-12 col-lg-16 col-md-24 col-sm-24 col-xs-24">
+            <h1>Animation</h1>
+            <h2>Usage</h2>
+            <div class="row">
+                <code>
+                    <script type="text/html" style="display:block; overflow: auto">
+                        import 'csser/animation/*.min.css'
+                    </script>
+                    <script type="text/html" style="display:block; overflow: auto">
+                        <link rel='stylesheet' href='https://unpkg.com/csser/animation/*.min.css'>
+                    </script>
+                </code>
+                <p>"*" Replaced with animation name</p>
+                <p>“*”替换为动画名称</p>
+                <p style="font-size: 1rem;">以动画 <code>fade</code> 为例</p>
+                <ol>
+                    <li>在要使用动画的元素上添加 <code>fade</code> 类，元素自动应用 <code>enter</code> 动画。</li>
+                    <li>使用触发器：在元素上添加 <code>data-trigger="hover"</code> ，则元素会在 <code>:hover</code> 状态下触发
+                        <code>leave</code> 动画。所有动画都支持 <code>hover, active, focus</code> 三种触发方式。</li>
+                    <li>使用编程控制：将元素 <code>data-action</code> 属性设置为 <code>enter</code> 或 <code>leave</code> 则会触发相应动画。</li>
+                </ol>
+            </div>
+            <h2>Trigger</h2>
+            <div class="row flex-between">
+                <div class="col-4">
+                    <div class="item fade" data-trigger="hover">.fade :hover</div>
+                </div>
+                <div class="col-4">
+                    <div class="item fade" data-trigger="active">.fade :active</div>
+                </div>
+                <div class="col-4">
+                    <div class="item fade" data-trigger="focus">.fade :focus</div>
+                </div>
+            </div>
+            <div class="row flex-between">
+                <div class="col-4">
+                    <div class="item" style="cursor: pointer;" onclick="onTriggerClick(event)">请点击
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="item fade">.fade</div>
+                </div>
+                <div class="col-4">
+                    <div class="item fade">.fade</div>
+                </div>
+            </div>
+            <h2>Animations</h2>
+            <div class="row flex-between">
+                <div class="col-4">
+                    <div class="item fade" data-trigger="hover">.fade</div>
+                </div>
+                <div class="col-4">
+                    <div class="item zoom-center" data-trigger="hover">.zoom-center</div>
+                </div>
+                <div class="col-4">
+                    <div class="item zoom-x-center" data-trigger="hover">.zoom-x-center</div>
+                </div>
+                <div class="col-4">
+                    <div class="item zoom-y-center" data-trigger="hover">.zoom-y-center</div>
+                </div>
+            </div>
+            <div class="row flex-between">
+                <div class="col-4">
+                    <div class="item zoom-left" data-trigger="hover">.zoom-left</div>
+                </div>
+                <div class="col-4">
+                    <div class="item zoom-right" data-trigger="hover">.zoom-right</div>
+                </div>
+                <div class="col-4">
+                    <div class="item zoom-top" data-trigger="hover">.zoom-top</div>
+                </div>
+                <div class="col-4">
+                    <div class="item zoom-bottom" data-trigger="hover">.zoom-bottom</div>
+                </div>
+            </div>
+            <div class="row flex-between">
+                <div class="col-4">
+                    <div class="item slide-left" data-trigger="hover">.slide-left</div>
+                </div>
+                <div class="col-4">
+                    <div class="item slide-right" data-trigger="hover">.slide-right</div>
+                </div>
+                <div class="col-4">
+                    <div class="item slide-top" data-trigger="hover">.slide-top</div>
+                </div>
+                <div class="col-4">
+                    <div class="item slide-bottom" data-trigger="hover">.slide-bottom</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        function onTriggerClick(event) {
+            const target = event.target
+            const row = target.parentElement.parentElement
+            const next1El = row.children[1].children[0]
+            const next2El = row.children[2].children[0]
+            next1El.dataset.action === 'enter' ? next1El.dataset.action = 'leave' : next1El.dataset.action = 'enter'
+            next2El.dataset.action === 'leave' ? next2El.dataset.action = 'enter' : next2El.dataset.action = 'leave'
+        }
+    </script>
+</body>
+
+</html>

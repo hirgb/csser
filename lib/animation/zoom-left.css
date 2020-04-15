@@ -1,0 +1,52 @@
+.zoom-left {
+    --duration: .5s;
+    animation: zoom-left-in var(--duration) both;
+}
+
+.zoom-left[data-action=enter] {
+    animation: zoom-left-in var(--duration) both;
+}
+
+.zoom-left[data-action=leave] {
+    animation: zoom-left-out var(--duration) both;
+}
+
+.zoom-left[data-trigger=hover]:hover {
+    animation: zoom-left-out var(--duration) both;
+}
+
+.zoom-left[data-trigger=active]:active {
+    animation: zoom-left-out var(--duration) both;
+}
+
+.zoom-left[data-trigger=focus]:focus {
+    animation: zoom-left-out var(--duration) both;
+}
+
+@keyframes zoom-left-in {
+    0% {
+        opacity: 0;
+        transform: scaleX(0);
+        transform-origin: left;
+    }
+
+    100% {
+        opacity: 1;
+        transform: scaleX(1);
+        transform-origin: left;
+    }
+}
+
+@keyframes zoom-left-out {
+    0% {
+        opacity: 1;
+        transform: scaleX(1);
+        transform-origin: left;
+    }
+
+    100% {
+        opacity: 0;
+        transform: scaleX(0);
+        transform-origin: left;
+    }
+}

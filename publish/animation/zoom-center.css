@@ -1,0 +1,99 @@
+.zoom-center {
+  --duration: 0.5s;
+  animation: zoom-center-in var(--duration) both;
+}
+.zoom-center[data-action=enter] {
+  animation: zoom-center-in var(--duration) both;
+}
+.zoom-center[data-action=leave] {
+  animation: zoom-center-out var(--duration) both;
+}
+.zoom-center[data-trigger=hover]:hover {
+  animation: zoom-center-out var(--duration) both;
+}
+.zoom-center[data-trigger=active]:active {
+  animation: zoom-center-out var(--duration) both;
+}
+.zoom-center[data-trigger=focus]:focus {
+  animation: zoom-center-out var(--duration) both;
+}
+@-moz-keyframes zoom-center-in {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+@-webkit-keyframes zoom-center-in {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+@-o-keyframes zoom-center-in {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+@keyframes zoom-center-in {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+@-moz-keyframes zoom-center-out {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0);
+  }
+}
+@-webkit-keyframes zoom-center-out {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0);
+  }
+}
+@-o-keyframes zoom-center-out {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0);
+  }
+}
+@keyframes zoom-center-out {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0);
+  }
+}
