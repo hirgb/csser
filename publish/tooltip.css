@@ -80,34 +80,6 @@
 .tooltip-right:before {
   border-right-color: #383838;
 }
-[data-tooltip]:not([class*=tooltip-top]):not([class*=tooltip-bottom]):not([class*=tooltip-left]):not([class*=tooltip-right]):before {
-  margin-bottom: -11px;
-}
-[data-tooltip]:not([class*=tooltip-top]):not([class*=tooltip-bottom]):not([class*=tooltip-left]):not([class*=tooltip-right]):before,
-[data-tooltip]:not([class*=tooltip-top]):not([class*=tooltip-bottom]):not([class*=tooltip-left]):not([class*=tooltip-right]):after {
-  bottom: 100%;
-  left: 50%;
-}
-[data-tooltip]:not([class*=tooltip-top]):not([class*=tooltip-bottom]):not([class*=tooltip-left]):not([class*=tooltip-right]):before {
-  left: calc(50% - 6px);
-}
-[data-tooltip]:not([class*=tooltip-top]):not([class*=tooltip-bottom]):not([class*=tooltip-left]):not([class*=tooltip-right]):after {
-  transform: translateX(-50%);
-  -moz-transform: translateX(-50%);
-  -webkit-transform: translateX(-50%);
-}
-[data-tooltip]:not([class*=tooltip-top]):not([class*=tooltip-bottom]):not([class*=tooltip-left]):not([class*=tooltip-right]):hover:before,
-[data-tooltip]:not([class*=tooltip-top]):not([class*=tooltip-bottom]):not([class*=tooltip-left]):not([class*=tooltip-right]):focus:before {
-  transform: translateY(-8px);
-  -moz-transform: translateY(-8px);
-  -webkit-transform: translateY(-8px);
-}
-[data-tooltip]:not([class*=tooltip-top]):not([class*=tooltip-bottom]):not([class*=tooltip-left]):not([class*=tooltip-right]):hover:after,
-[data-tooltip]:not([class*=tooltip-top]):not([class*=tooltip-bottom]):not([class*=tooltip-left]):not([class*=tooltip-right]):focus:after {
-  transform: translateX(-50%) translateY(-8px);
-  -moz-transform: translateX(-50%) translateY(-8px);
-  -webkit-transform: translateX(-50%) translateY(-8px);
-}
 .tooltip-top:before {
   margin-bottom: -11px;
 }
@@ -356,36 +328,6 @@
   opacity: 1;
   visibility: visible;
 }
-.tooltip-always:not([class*=tooltip-top]):not([class*=tooltip-bottom]):not([class*=tooltip-left]):not([class*=tooltip-right]):before {
-  transform: translateY(-8px);
-  -moz-transform: translateY(-8px);
-  -webkit-transform: translateY(-8px);
-}
-.tooltip-always:not([class*=tooltip-top]):not([class*=tooltip-bottom]):not([class*=tooltip-left]):not([class*=tooltip-right]):after {
-  transform: translateX(-50%) translateY(-8px);
-  -moz-transform: translateX(-50%) translateY(-8px);
-  -webkit-transform: translateX(-50%) translateY(-8px);
-}
-.tooltip-always:not([class*=tooltip-top]):not([class*=tooltip-bottom]):not([class*=tooltip-left]):not([class*=tooltip-right])-left:before {
-  transform: translateY(-8px);
-  -moz-transform: translateY(-8px);
-  -webkit-transform: translateY(-8px);
-}
-.tooltip-always:not([class*=tooltip-top]):not([class*=tooltip-bottom]):not([class*=tooltip-left]):not([class*=tooltip-right])-left:after {
-  transform: translateX(-100%) translateY(-8px);
-  -moz-transform: translateX(-100%) translateY(-8px);
-  -webkit-transform: translateX(-100%) translateY(-8px);
-}
-.tooltip-always:not([class*=tooltip-top]):not([class*=tooltip-bottom]):not([class*=tooltip-left]):not([class*=tooltip-right])-right:before {
-  transform: translateY(-8px);
-  -moz-transform: translateY(-8px);
-  -webkit-transform: translateY(-8px);
-}
-.tooltip-always:not([class*=tooltip-top]):not([class*=tooltip-bottom]):not([class*=tooltip-left]):not([class*=tooltip-right])-right:after {
-  transform: translateY(-8px);
-  -moz-transform: translateY(-8px);
-  -webkit-transform: translateY(-8px);
-}
 .tooltip-always.tooltip-top:before {
   transform: translateY(-8px);
   -moz-transform: translateY(-8px);
@@ -466,9 +408,6 @@
   -moz-transform: translateX(8px);
   -webkit-transform: translateX(8px);
 }
-.tooltip-error:not([class*=tooltip-top]):not([class*=tooltip-bottom]):not([class*=tooltip-left]):not([class*=tooltip-right]):before {
-  border-top-color: #b34e4d;
-}
 .tooltip-error:after {
   background-color: #b34e4d;
   text-shadow: 0 -1px 0px #863b39;
@@ -496,9 +435,6 @@
 }
 .tooltip-error.tooltip-right:before {
   border-right-color: #b34e4d;
-}
-.tooltip-warning:not([class*=tooltip-top]):not([class*=tooltip-bottom]):not([class*=tooltip-left]):not([class*=tooltip-right]):before {
-  border-top-color: #b34e4d;
 }
 .tooltip-warning:after {
   background-color: #c09854;
@@ -528,9 +464,6 @@
 .tooltip-warning.tooltip-right:before {
   border-right-color: #c09854;
 }
-.tooltip-info:not([class*=tooltip-top]):not([class*=tooltip-bottom]):not([class*=tooltip-left]):not([class*=tooltip-right]):before {
-  border-top-color: #b34e4d;
-}
 .tooltip-info:after {
   background-color: #3986ac;
   text-shadow: 0 -1px 0px #2b6481;
@@ -558,9 +491,6 @@
 }
 .tooltip-info.tooltip-right:before {
   border-right-color: #3986ac;
-}
-.tooltip-success:not([class*=tooltip-top]):not([class*=tooltip-bottom]):not([class*=tooltip-left]):not([class*=tooltip-right]):before {
-  border-top-color: #b34e4d;
 }
 .tooltip-success:after {
   background-color: #458746;

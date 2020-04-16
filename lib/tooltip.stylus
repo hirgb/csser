@@ -158,9 +158,6 @@ tooltip-type($color)
 
 arrow-border-color($tooltipDefaultColor)
 
-[data-tooltip]:not([class*={$tooltipPrefix}top]):not([class*={$tooltipPrefix}bottom]):not([class*={$tooltipPrefix}left]):not([class*={$tooltipPrefix}right])
-    vertical-positioned-tooltip('bottom', -1)
-
 .{$tooltipPrefix}top
     vertical-positioned-tooltip('bottom', -1)
 
@@ -210,13 +207,6 @@ arrow-border-color($tooltipDefaultColor)
     &:before
         opacity: 1
         visibility: visible
-    
-    &:not([class*={$tooltipPrefix}top]):not([class*={$tooltipPrefix}bottom]):not([class*={$tooltipPrefix}left]):not([class*={$tooltipPrefix}right])
-        set-margin('translateY', -1, -50%)
-        &-left
-            set-margin('translateY', -1, -100%)
-        &-right
-            set-margin('translateY', -1, 0)
 
     &.{$tooltipPrefix}top
         set-margin('translateY', -1, -50%)
@@ -240,21 +230,13 @@ arrow-border-color($tooltipDefaultColor)
 
 // color
 .{$tooltipPrefix}error
-    &:not([class*={$tooltipPrefix}top]):not([class*={$tooltipPrefix}bottom]):not([class*={$tooltipPrefix}left]):not([class*={$tooltipPrefix}right]):before
-        border-top-color: $tooltipErrorColor
     tooltip-type($tooltipErrorColor)
 
 .{$tooltipPrefix}warning
-    &:not([class*={$tooltipPrefix}top]):not([class*={$tooltipPrefix}bottom]):not([class*={$tooltipPrefix}left]):not([class*={$tooltipPrefix}right]):before
-        border-top-color: $tooltipErrorColor
     tooltip-type($tooltipWarningColor)
 
 .{$tooltipPrefix}info
-    &:not([class*={$tooltipPrefix}top]):not([class*={$tooltipPrefix}bottom]):not([class*={$tooltipPrefix}left]):not([class*={$tooltipPrefix}right]):before
-        border-top-color: $tooltipErrorColor
     tooltip-type($tooltipInfoColor)
 
 .{$tooltipPrefix}success
-    &:not([class*={$tooltipPrefix}top]):not([class*={$tooltipPrefix}bottom]):not([class*={$tooltipPrefix}left]):not([class*={$tooltipPrefix}right]):before
-            border-top-color: $tooltipErrorColor
     tooltip-type($tooltipSuccessColor)

@@ -9,6 +9,7 @@ const stylus = require('stylus');
 const libDir = path.resolve('./lib/');
 const publishDir = path.resolve('./publish/');
 const readmePath = path.resolve('./README.md');
+const changeLogPath = path.resolve('./CHANGELOG_zh.md');
 const packagePath = path.resolve('./scripts/package.json');
 
 function render(str, compress = true) {
@@ -76,6 +77,7 @@ async function run() {
     //准备readme和package.json
     if (publish) {
         fs.copyFileSync(readmePath, path.resolve(publishDir, 'README.md'));
+        fs.copyFileSync(changeLogPath, path.resolve(publishDir, 'CHANGELOG_zh.md'));
         Log.info('Copy: README.md')
         const packageObj = JSON.parse(fs.readFileSync(packagePath))
         console.log('Current version is: ' + packageObj.version);
