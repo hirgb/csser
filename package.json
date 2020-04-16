@@ -9,7 +9,7 @@
         "bcfp": "node scripts/build.js --publish",
         "rendertemp": "node scripts/render.js",
         "buildtemp": "node scripts/render.js --save",
-        "serve": "parcel src/index.html",
+        "serve": "parcel src/index.html --open",
         "build": "parcel build src/index.html --no-source-maps --no-minify --no-content-hash --public-url ./ --out-dir docs"
     },
     "dependencies": {},
