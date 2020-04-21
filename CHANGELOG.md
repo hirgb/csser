@@ -1,5 +1,13 @@
 ## CHANGELOG
 
+### 0.4.3
+
+*2020-04-17*
+
+#### new feature 
+
+- add two loading effects.
+
 ### 0.4.2
 
 *2020-04-17*
