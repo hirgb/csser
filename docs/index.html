@@ -26,6 +26,7 @@
         }
 
         .list .item {
+            position: relative;
             height: 80px;
             line-height: 80px;
             color: #783a8a;
@@ -33,6 +34,28 @@
 
         .list .item:hover {
             background-color: #fafafa;
+        }
+
+        .list .developing::after {
+            content: 'developing';
+            display: block;
+            opacity: .9;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            z-index: 1;
+            height: 0;
+            overflow: hidden;
+            width: 100%;
+            background-color: var(--main-color);
+            color: white;
+            text-align: center;
+            transition: height .3s;
+            transition-delay: .3s;
+        }
+
+        .list .developing:hover::after {
+            height: 100%;
         }</style>
 
 </head>
@@ -64,7 +87,7 @@
                             <div>布局 - Layout</div>
                         </a>
                     </div>
-                    <div class="col-8 col-xs-24 item">主题 - Theme</div>
+                    <div class="col-8 col-xs-24 item developing">主题 - Theme</div>
                     <div class="col-8 col-xs-24 item">
                         <a href="loading.html" target="_self" rel="noopener noreferrer">
                             <div>加载 - Loading</div>
@@ -72,7 +95,7 @@
                     </div>
                 </div>
                 <div class="row flex-center">
-                    <div class="col-8 col-xs-24 item">按钮 - Buttons</div>
+                    <div class="col-8 col-xs-24 item developing">按钮 - Buttons</div>
                     <div class="col-8 col-xs-24 item">
                         <a href="tooltip.html" target="_self" rel="noopener noreferrer">
                             <div>提示 - Tooltip</div>
