@@ -1,6 +1,6 @@
 {
     "name": "csser",
-    "version": "0.4.3",
+    "version": "0.4.4",
     "description": "A pure CSS tool library with de-framework, flexible combination and small size.",
     "main": "",
     "scripts": {
@@ -10,6 +10,9 @@
         "css",
         "csser",
         "layout",
+        "loading",
+        "animation",
+        "tooltip",
         "flex",
         "offset",
         "responsive"

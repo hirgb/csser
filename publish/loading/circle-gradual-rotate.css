@@ -1,0 +1,47 @@
+.circle-gradual-rotate {
+  font-size: 10px;
+  width: 5em;
+  height: 5em;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background: conic-gradient(#f00, transparent 70%);
+  --mask: radial-gradient(closest-side, transparent 75%, #000 76%);
+  -webkit-mask-image: var(--mask);
+  mask-image: var(--mask);
+  animation: circle-gradual-rotate 1s linear infinite reverse;
+}
+@-moz-keyframes circle-gradual-rotate {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+@-webkit-keyframes circle-gradual-rotate {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+@-o-keyframes circle-gradual-rotate {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+@keyframes circle-gradual-rotate {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
