@@ -1,5 +1,11 @@
 ## CHANGELOG
 
+### 0.4.5
+
+*2020-05-07*
+
+- add other/ios-scroll-smooth
+
 ### 0.4.4
 
 *2020-04-17*
